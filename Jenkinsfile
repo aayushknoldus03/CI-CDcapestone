@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy stage') {
             steps{
             script {
-          deploy adapters: [tomcat9(credentialsId: "admin", url: "http://3.25.220.79:8080/")], contextPath: null, onFailure: false
+        deploy adapters: [tomcat9(credentialsId: 'admin', url: 'http://3.25.220.79:8080/')], contextPath: '', onFailure: false, war: 'target/*.war' 
 }
                 }
         }
